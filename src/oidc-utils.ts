@@ -156,8 +156,9 @@ export class OidcUtils {
     }
 
     public static setOidcStepOutputs(username: string, accessToken: string): void {
-        core.setSecret(accessToken);
-        core.setSecret(username);
+        // now we can pass these credentials to download a container in a different job
+        // core.setSecret(accessToken);
+        // core.setSecret(username);
         core.setOutput('oidc-token', accessToken);
         core.setOutput('oidc-user', username);
     }
